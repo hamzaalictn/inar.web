@@ -34,7 +34,3 @@ build/
 
 # Temp Files
 ~*
-
-# You don't need to explicitly include src/main/java or src/main/test
-# as they are included by default unless specified above
-
