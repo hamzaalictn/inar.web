@@ -17,37 +17,35 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WebOrderChromeDriverTest {
 
-    WebDriver driver;
+	WebDriver driver;
 
-    @BeforeEach
-    void setUpTestEnvironment() {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
+	@BeforeEach
+	void setUpTestEnvironment() {
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	}
 
-    @Test
-    void testSeleniumWebDriver() throws InterruptedException {
-        driver.get("https://InarAcademy:Fk160621.@test.inar-academy.com");
-        HomePage homePage = new HomePage(driver);
-        WeborderLoginPage weborderLoginPage = homePage.clickOnWeborderLink();
-        WebOrderHomePage webOrderHomePage = weborderLoginPage.login("Inar", "Academy");
-        OrderPage orderPage = webOrderHomePage.navigateToOrder();
-        orderPage.enterProduct("Books", "10", "10");
-        orderPage.enterCustomerInfo("Francois", "Main", "NewYork", "NW", "1004");
-        orderPage.enterPaymentInformation("visa", "4938281746192845", "11/32");
+	@Test
+	void testSeleniumWebDriver() throws InterruptedException {
+		driver.get("https://InarAcademy:Fk160621.@test.inar-academy.com");
+		HomePage homePage = new HomePage(driver);
+		WeborderLoginPage weborderLoginPage = homePage.clickOnWeborderLink();
+		WebOrderHomePage webOrderHomePage = weborderLoginPage.login("Inar", "Academy");
+		OrderPage orderPage = webOrderHomePage.navigateToOrder();
+		orderPage.enterProduct("Books", "10", "10");
+		orderPage.enterCustomerInfo("Francois", "Main", "NewYork", "NW", "1004");
+		orderPage.enterPaymentInformation("visa", "4938281746192845", "11/32");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scroll(0,1000)");
+		Thread.sleep(5000);
+		orderPage.clickOnProcessButton();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scroll(0,1000)");
-        Thread.sleep(5000);
+	}
 
-        orderPage.clickOnProcessButton();
-
-    }
-
-    @AfterEach
-    void tearDownTestEnvironment() {
-        if (driver != null)
-            driver.quit();
-    }
+	@AfterEach
+	void tearDownTestEnvironment() {
+		if (driver != null)
+			driver.quit();
+	}
 
 }
