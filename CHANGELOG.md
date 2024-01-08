@@ -3,6 +3,7 @@
 ## [1.0.2]
 
 ### Changed
+- [Implement TestNG Framework for WebOrder Project](https://suedaandhamza.atlassian.net/browse/YE2024-42)
 - [Implement Synchronized Driver Class for Enhanced WebDriver Management in Multi-threaded Testing Environments](https://suedaandhamza.atlassian.net/browse/YE2024-41)
 - [Enhancement of Page Object Model with Page Factory Integration and Additional Supporting Classes](https://suedaandhamza.atlassian.net/browse/YE2024-34)
 - [Implement Page Object Model in UI Framework](https://suedaandhamza.atlassian.net/browse/YE2024-33)

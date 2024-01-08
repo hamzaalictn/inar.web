@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.inar</groupId>
     <artifactId>inar.web</artifactId>
-    <version>1.0.1</version>
-    
+    <version>1.0.2</version>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -14,38 +14,22 @@
         <selenium.version>4.16.1</selenium.version>
         <junit.version>5.10.1</junit.version>
     </properties>
-<dependencies>
+    <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.1</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- JUnit Jupiter Engine to run the tests -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+    </dependencies>
 
-        <!-- JUnit Jupiter Params for parameterized tests -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>5.10.1</version>
-            <scope>test</scope>
-        </dependency>
-</dependencies>
-
- <!-- Build Section: Specifies build configurations like plugins and their settings. -->
+    <!-- Build Section: Specifies build configurations like plugins and their settings. -->
     <build>
         <!-- Plugins Section: Defines plugins used during the build process. -->
         <plugins>
@@ -66,11 +50,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.3</version>
                 <configuration>
-                    <!-- Specific configuration for JUnit 5. -->
-                    <useModulePath>false</useModulePath>
-                    <includes>
-                        <include>**/*.java</include>
-                    </includes>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>regressionTests.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
             <plugin>
