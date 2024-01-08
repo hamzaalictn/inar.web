@@ -1,11 +1,11 @@
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.OrderPage;
 import pages.WebOrderHomePage;
 import pages.WeborderLoginPage;
 import utils.BrowserUtils;
 
-public class WebOrderTest1 extends Hooks {
+public class WebOrderTest4 extends Hooks {
 
 	@Test
 	void testSeleniumWebDriver() throws InterruptedException {
@@ -22,7 +22,6 @@ public class WebOrderTest1 extends Hooks {
 		BrowserUtils.scrollDown();
 		Thread.sleep(1000);
 		orderPage.clickOnProcessButton();
-
 	}
 
 }
